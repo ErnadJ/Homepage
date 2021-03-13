@@ -55,7 +55,7 @@ namespace Homepage.REST.Models
 
         public static bool IsAuthorizedUser(string Username, string Password)
         {
-            /** Daten wird in der Datenbank verglichen **/
+            /** Daten werden in der Datenbank verglichen **/
             if(_restUserDB.GetRestUser(Username, Password))
             {
                 return true;

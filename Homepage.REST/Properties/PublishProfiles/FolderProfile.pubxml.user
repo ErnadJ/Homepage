@@ -22,25 +22,25 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>02/19/2021 11:14:47</publishTime>
     </File>
     <File Include="bin/Homepage.Backend.dll">
-      <publishTime>02/27/2021 13:47:45</publishTime>
+      <publishTime>03/13/2021 18:31:28</publishTime>
     </File>
     <File Include="bin/Homepage.Backend.dll.config">
       <publishTime>02/24/2021 08:34:22</publishTime>
     </File>
     <File Include="bin/Homepage.Backend.pdb">
-      <publishTime>02/27/2021 13:47:45</publishTime>
+      <publishTime>03/13/2021 18:31:28</publishTime>
     </File>
     <File Include="bin/Homepage.GlobalDefinitions.dll">
-      <publishTime>02/27/2021 13:48:18</publishTime>
+      <publishTime>03/13/2021 18:31:27</publishTime>
     </File>
     <File Include="bin/Homepage.GlobalDefinitions.pdb">
-      <publishTime>02/27/2021 13:48:18</publishTime>
+      <publishTime>03/13/2021 18:31:27</publishTime>
     </File>
     <File Include="bin/Homepage.REST.dll">
-      <publishTime>02/28/2021 11:05:55</publishTime>
+      <publishTime>03/13/2021 18:32:40</publishTime>
     </File>
     <File Include="bin/Homepage.REST.pdb">
-      <publishTime>02/28/2021 11:05:55</publishTime>
+      <publishTime>03/13/2021 18:32:40</publishTime>
     </File>
     <File Include="bin/log4net.dll">
       <publishTime>07/04/2020 11:34:05</publishTime>
@@ -208,7 +208,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>07/04/2020 11:34:05</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/20/2021 13:08:05</publishTime>
+      <publishTime>03/13/2021 18:32:40</publishTime>
     </File>
   </ItemGroup>
 </Project>

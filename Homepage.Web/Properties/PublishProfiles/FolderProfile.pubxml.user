@@ -52,25 +52,25 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>02/20/2019 03:57:42</publishTime>
     </File>
     <File Include="bin/Homepage.GlobalDefinitions.dll">
-      <publishTime>03/05/2021 12:32:58</publishTime>
+      <publishTime>03/13/2021 18:31:27</publishTime>
     </File>
     <File Include="bin/Homepage.GlobalDefinitions.pdb">
-      <publishTime>03/05/2021 12:32:58</publishTime>
+      <publishTime>03/13/2021 18:31:27</publishTime>
     </File>
     <File Include="bin/Homepage.Web.dll">
-      <publishTime>03/05/2021 14:20:57</publishTime>
+      <publishTime>03/13/2021 18:32:33</publishTime>
     </File>
     <File Include="bin/Homepage.Web.pdb">
-      <publishTime>03/05/2021 14:20:57</publishTime>
+      <publishTime>03/13/2021 18:32:33</publishTime>
     </File>
     <File Include="bin/Homepage.Web.RESTCaller.dll">
-      <publishTime>02/27/2021 13:47:48</publishTime>
+      <publishTime>03/13/2021 18:31:30</publishTime>
     </File>
     <File Include="bin/Homepage.Web.RESTCaller.dll.config">
       <publishTime>02/24/2021 08:34:17</publishTime>
     </File>
     <File Include="bin/Homepage.Web.RESTCaller.pdb">
-      <publishTime>02/27/2021 13:47:48</publishTime>
+      <publishTime>03/13/2021 18:31:30</publishTime>
     </File>
     <File Include="bin/it-IT/Kendo.Mvc.resources.dll">
       <publishTime>02/20/2019 03:57:42</publishTime>
@@ -361,7 +361,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>03/05/2021 13:25:41</publishTime>
     </File>
     <File Include="CodeSnippets/Xamarin.PNG">
-      <publishTime>02/23/2021 17:33:10</publishTime>
+      <publishTime>03/13/2021 18:20:06</publishTime>
     </File>
     <File Include="Config.log4net">
       <publishTime>07/19/2019 12:23:37</publishTime>
@@ -826,19 +826,19 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>02/15/2021 13:46:41</publishTime>
     </File>
     <File Include="Views/AboutMe/CV.cshtml">
-      <publishTime>02/27/2021 14:30:57</publishTime>
+      <publishTime>03/12/2021 07:35:37</publishTime>
     </File>
     <File Include="Views/AboutMe/Me.cshtml">
-      <publishTime>02/27/2021 11:27:06</publishTime>
+      <publishTime>03/12/2021 07:48:36</publishTime>
     </File>
     <File Include="Views/AboutMe/Skills.cshtml">
       <publishTime>03/05/2021 13:26:33</publishTime>
     </File>
     <File Include="Views/Contact/ContactFormular.cshtml">
-      <publishTime>02/20/2021 12:16:28</publishTime>
+      <publishTime>03/12/2021 07:36:28</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>02/27/2021 13:14:10</publishTime>
+      <publishTime>03/08/2021 12:32:49</publishTime>
     </File>
     <File Include="Views/Projects/Projects.cshtml">
       <publishTime>03/05/2021 10:22:25</publishTime>
@@ -889,7 +889,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Si
       <publishTime>02/20/2019 03:57:42</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/05/2021 13:07:01</publishTime>
+      <publishTime>03/13/2021 12:12:15</publishTime>
     </File>
     <File Include="Views/web.config">
       <publishTime>02/19/2021 07:50:39</publishTime>
