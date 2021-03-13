@@ -1,0 +1,5 @@
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.GlobalDefinitions\bin\Debug\Homepage.GlobalDefinitions.dll
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.GlobalDefinitions\bin\Debug\Homepage.GlobalDefinitions.pdb
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.GlobalDefinitions\obj\Debug\Homepage.GlobalDefinitions.csproj.CoreCompileInputs.cache
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.GlobalDefinitions\obj\Debug\Homepage.GlobalDefinitions.dll
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.GlobalDefinitions\obj\Debug\Homepage.GlobalDefinitions.pdb

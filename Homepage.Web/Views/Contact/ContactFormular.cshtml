@@ -1,0 +1,82 @@
+﻿@model Homepage.GlobalDefinitions.Models.Contact
+
+@{
+    ViewBag.Title = "Kontakt";
+}
+
+<section class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="contact-title">
+                    <h4>Kontakt</h4>
+                    <p>
+                        Sie können mich über dieses Formular kontaktieren und ich werde Ihnen anschließend
+                        schnellstmöglich eine Rückantwort senden !
+                    </p>
+                </div>
+                <div class="contact-widget">
+                    <div class="cw-item">
+                        <div class="ci-icon">
+                            <i class="ti-location-pin"></i>
+                        </div>
+                        <div class="ci-text">
+                            <span>Adresse:</span>
+                            <p>Tal Str. 44 Stuttgart</p>
+                        </div>
+                    </div>
+                    <div class="cw-item">
+                        <div class="ci-icon">
+                            <i class="ti-mobile"></i>
+                        </div>
+                        <div class="ci-text">
+                            <span>Telefon:</span>
+                            <p>+49 172 205 652 8</p>
+                        </div>
+                    </div>
+                    <div class="cw-item">
+                        <div class="ci-icon">
+                            <i class="ti-email"></i>
+                        </div>
+                        <div class="ci-text">
+                            <span>E-Mail:</span>
+                            <p>ErnadJakupovic@yahoo.de</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+                <div class="contact-form">
+                    <div class="leave-comment">
+                        @if (!string.IsNullOrEmpty(ViewBag.Error))
+                        {
+                            <h4 class="text-danger">@ViewBag.Error</h4>
+                        }
+                        @if (!string.IsNullOrEmpty(ViewBag.Successful))
+                        {
+                            <h4 class="text-success">@ViewBag.ErSuccessfulror</h4>
+                        }
+                        <h4>Nachricht</h4>
+                        <p>Bitte hinterlassen Sie eine Nachricht, ich werde Ihnen zeitnah antworten.</p>
+                        @using (Html.BeginForm("ContactFormular", "Contact", FormMethod.Post, new { @class = "form-horizontal col-12" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @Html.ValidationMessageFor(m => m.MailAddress, null, new { @class = "text-danger" })
+                                    @Html.TextBoxFor(m => m.MailAddress, null, new { @class = "form-control col-12", @placeholder = "E-Mail Adresse" })
+                                </div>
+                                <div class="col-lg-12 my-1">
+                                    @Html.ValidationMessageFor(m => m.Message, null, new { @class = "text-danger" })
+                                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control col-12", @placeholder = "Nachricht" })
+                                    <button type="submit" class="button my-1 col-12">Senden</button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

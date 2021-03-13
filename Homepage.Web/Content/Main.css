@@ -1,0 +1,60 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    min-height: 100%;
+}
+
+header {
+    background-image: url(https://www.andisa.net/wp-content/uploads/2017/08/Background-header-home.jpg);
+    border-bottom: 2px solid black;
+    background-position-y: 18em;
+    background-size: cover;
+    height: 15em;
+    padding: 1.1em;
+    color: white;
+}
+
+footer {
+    background-color: #0B243B;
+    border-top: 2px solid black;
+    padding: 1em;
+    height: 202px;
+    width: 100%;
+}
+
+nav {
+    border-bottom: 2px solid black;
+}
+
+nav .nav-item {
+    font-size: 20px;
+    padding: 0em 1em 0em 1em;
+}
+
+.wrapper {
+    min-height: 100vh;
+    height: auto;
+    margin: 0 auto -202px;
+    padding: 0 0 202px;
+}
+
+@media (max-width: 992px) {
+    footer {
+        background-color: #0B243B;
+        padding: 1em;
+        height: 75px;
+        width: 100%;
+    }
+
+    .wrapper {
+        margin: 0 auto -75px;
+        padding: 0 0 75px;
+    }
+}
+
+*{
+    box-sizing: border-box;
+}

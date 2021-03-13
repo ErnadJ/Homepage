@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.websitetooltester.com/wp-content/uploads/2015/06/eigene-homepage.png">
+    <link href="~/Content/Main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Content.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <!-- Kendo -->
+    <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    <!-- Fontawesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <!-- Lobster Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <!-- Sans Serif Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300" rel="stylesheet" type="text/css">
+    <script src="@Url.Content("~/Scripts/modernizr-2.8.3.js")"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <!-- Cookie Request -->
+    <script type="text/javascript">
+        window.cookieconsent_options = { "message": "Diese Webseite nutzt Cookies, um bestmögliche Funktionalität bieten zu können.", "dismiss": "Zustimmen", "learnMore": "Mehr Infos", "link": "http://de.webnode.com/datenschutzerklaerung/", "theme": "dark-bottom" };
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            $("#status").fadeOut(500);
+            $("#preloader").delay(500).fadeOut("slow");
+
+            setActiveNavigation();
+        }
+
+        function setActiveNavigation() {
+            var activeSite = document.getElementById("@ViewBag.ActiveSite");
+
+            activeSite.className = "nav-item active";
+        }
+    </script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+    </div>
+    <!-- / Preloader -->
+
+    <div class="wrapper">
+        @*<div class="wrapper-alert bgBlue">
+            <div class="container">
+                >> Willkommen auf meiner Homepage <<
+            </div>
+        </div>*@
+        <header>
+            <div class="container">
+                <div class="header-title">
+                    <div class="name">
+                        Ernad Jakupovic
+                    </div>
+                        <div class="clearfix"></div>
+                    <div class="description">
+                        Anwendungsentwickler
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bgBlue">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav w-100">
+                        <li class="nav-item" id="Homepage">
+                            <a class="nav-link" href="@Url.Action("Index", "Home")">Startseite</a>
+                        </li>
+                        <li class="nav-item" id="AboutMe">
+                            <a class="nav-link" href="@Url.Action("Me", "AboutMe")">Über mich</a>
+                        </li>
+                        <li class="nav-item" id="Skills">
+                            <a class="nav-link" href="@Url.Action("Skills", "AboutMe")">Skill-Matrix</a>
+                        </li>
+                        <li class="nav-item" id="CV">
+                            <a class="nav-link" href="@Url.Action("CV", "AboutMe")">Lebenslauf</a>
+                        </li>
+                        <li class="nav-item" id="Project">
+                            <a class="nav-link" href="@Url.Action("Projects", "Projects")">Projekte</a>
+                        </li>
+                        <li class="nav-item" id="Contact">
+                            <a class="nav-link" href="@Url.Action("ContactFormular", "Contact")">Kontakt</a>
+                        </li>
+                        <li class="nav-item ml-auto" id="Logout">
+                            <a class="nav-link text-danger font-weight-bold" href="@Url.Action("Logout", "Secure")">Abmelden</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3>Adresse</h3>
+                        <p class="mb-0"><i class="fa fa-user"></i> Ernad Jakupovic</p>
+                        <p class="mb-0"><i class="fa fa-road"></i>Talstr. 44</p>
+                        <p class="mb-0"><i class="fa fa-building"></i> 70188 Stuttgart</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Kontakt</h3>
+                        <p class="mb-0"><i class="fa fa-phone"></i> 0172 20565288</p>
+                        <p class="mb-0"><i class="fa fa-envelope-o"></i> ErnadJakupovic@yahoo.de</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-copyright">
+                    &copy; 2021 Ernad Jakupovic - Alle Rechte vorbehalten.
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="footer-bottom-links">
+                    <span class="item">
+                        <a href="https://de.webnode.com/datenschutzerklaerung/" target="_blank">Datenschutz</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    </body>
+</html>

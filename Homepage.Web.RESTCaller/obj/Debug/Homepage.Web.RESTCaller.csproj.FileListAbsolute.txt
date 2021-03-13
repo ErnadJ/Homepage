@@ -1,0 +1,11 @@
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\bin\Debug\Homepage.Web.RESTCaller.dll.config
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\bin\Debug\Homepage.Web.RESTCaller.dll
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\bin\Debug\Homepage.Web.RESTCaller.pdb
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\obj\Debug\Homepage.Web.RESTCaller.csproj.CoreCompileInputs.cache
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\obj\Debug\Homepage.Web.RESTCaller.csproj.CopyComplete
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\obj\Debug\Homepage.Web.RESTCaller.dll
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\obj\Debug\Homepage.Web.RESTCaller.pdb
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\bin\Debug\Homepage.GlobalDefinitions.dll
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\bin\Debug\Homepage.GlobalDefinitions.pdb
+C:\Users\ejakupovic\Desktop\Homepage\Homepage.Web.RESTCaller\obj\Debug\Homepage.Web.RESTCaller.csprojAssemblyReference.cache
