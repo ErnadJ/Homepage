@@ -30,7 +30,7 @@ namespace Homepage.Web.RESTCaller.APIAccess
                 request.Timeout = 20000;
 
                 /** Credentials sind optional, jedoch werden sie hierbei benötigt
-                 * aufgrund der Authentification **/
+                 *  aufgrund der Authentification **/
                 request.Credentials = CredentialCache.DefaultCredentials;
                 request.Headers["Authorization"] = "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(_username + ":" + _password));
 

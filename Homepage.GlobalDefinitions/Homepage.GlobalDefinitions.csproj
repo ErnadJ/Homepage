@@ -48,6 +48,7 @@
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Collections\ListSkills.cs" />
     <Compile Include="Models\SMTPConfig.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

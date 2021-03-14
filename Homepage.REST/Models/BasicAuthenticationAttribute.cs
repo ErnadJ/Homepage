@@ -32,7 +32,7 @@ namespace Homepage.REST.Models
                 var decodeauthToken = System.Text.Encoding.UTF8.GetString(
                     Convert.FromBase64String(authToken));
 
-                /** Split nach ":" **/
+                /** Split nach ":"  **/
                 var arrUserNameandPassword = decodeauthToken.Split(':');
 
                 if (IsAuthorizedUser(arrUserNameandPassword[0], arrUserNameandPassword[1]))
