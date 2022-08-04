@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Authentifizierung";
+    Layout = "_LayoutSecure.cshtml";
+}
+
+<div class="container h-100 d-flex align-items-center">
+    <div class="d-flex justify-content-center col-lg-12">
+        @using (Html.BeginForm("Login", "Secure", FormMethod.Post, new { @class = "form-horizontal col-lg-7" }))
+        {
+            <img class="mb-4" src="https://cdn4.iconfinder.com/data/icons/cyber-security-29/512/security-cyber-digital-secure-21-512.png" alt="" width="72" height="72">
+
+            if (!string.IsNullOrEmpty(ViewBag.Error))
+            {
+                <h4 class="text-danger">@ViewBag.Error</h4>
+            }
+
+            <h1 class="h3 mb-3 font-weight-normal">Autorisieren Sie sich</h1>
+
+            <label for="inputAuthCode" class="sr-only">Auth-Code</label>
+            @Html.Password("AuthCode", "", new { @class = "form-control", @placeholder = "Authentification Code", required = "", autofocus = "", minlength = "5" });
+
+            <button class="btn btn-lg btn-primary btn-block my-3" type="submit">Autorisieren</button>
+            <p class="text-muted">© 2021 Ernad Jakupovic</p>
+        }
+    </div>
+</div>
+    

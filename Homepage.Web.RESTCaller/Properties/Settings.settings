@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Homepage.Web.RESTCaller.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="REST_Username" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">restUser</Value>
+    </Setting>
+    <Setting Name="REST_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">restService!359</Value>
+    </Setting>
+    <Setting Name="REST_Url" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:65134/api/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
