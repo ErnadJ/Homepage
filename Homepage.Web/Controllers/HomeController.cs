@@ -22,10 +22,8 @@ namespace Homepage.Web.Controllers
             return View();
         }
 
-        internal void setSettings(string activeSite)
-        {
-            ViewBag.ActiveSite = activeSite;
-        }
+        internal void setSettings(string activeSite) =>  ViewBag.ActiveSite = activeSite;
+
 
         /** Methode überprüft ob die Session gültig ist , über Cookies **/
         internal bool proveCookies()

@@ -18,7 +18,10 @@ namespace Homepage.Web.Controllers
         {
             _configAPI = new ConfigAPI();
             _currentConfig = new Config();
+
             _currentConfig = _configAPI.GetConfig();
+
+            _configAPI.OnError += new ConfigAPI.OnErrorEventHandler(ErrorLogger);
         }
 
         public ActionResult Login(string authCode)
@@ -155,5 +158,7 @@ namespace Homepage.Web.Controllers
                 return false;
             }
         }
+
+        void ErrorLogger(string message) => Log4net.Logger.Error("[SECURECONTROLLER] " + message);
     }
 }

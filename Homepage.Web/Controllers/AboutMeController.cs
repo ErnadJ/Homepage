@@ -15,6 +15,7 @@ namespace Homepage.Web.Controllers
         public AboutMeController()
         {
             _skillAPI = new SkillAPI();
+            _skillAPI.OnError += new SkillAPI.OnErrorEventHandler(ErrorLogger)
         }
 
         public ActionResult Me()
@@ -74,10 +75,7 @@ namespace Homepage.Web.Controllers
             return View();
         }
 
-        internal void setSettings(string activeSite)
-        {
-            ViewBag.ActiveSite = activeSite;
-        }
+        internal void setSettings(string activeSite) => ViewBag.ActiveSite = activeSite;
 
         /** Methode überprüft ob die Session gültig ist , über Cookies **/
         internal bool proveCookies()
@@ -93,5 +91,7 @@ namespace Homepage.Web.Controllers
                 return false;
             }
         }
+
+        void ErrorLogger(string message) => Log4net.Logger.Error("[ABOUTMECONTROLLER] " + message);
     }
 }

@@ -18,6 +18,8 @@ namespace Homepage.Web.Controllers
         {
             _mailAPI = new MailAPI();
             _result="";
+
+            _mailAPI.OnError += new MailAPI.OnErrorEventHandler(ErrorLogger)
         }
 
         [HttpPost]
@@ -65,9 +67,15 @@ namespace Homepage.Web.Controllers
             return View();
         }
 
-        internal void setSettings(string activeSite)
+        internal void setSettings(string activeSite) => ViewBag.ActiveSite = activeSite;
+
+        /** REST-API Aufruf zum versenden der E-Mail **/
+        private void sendMailMessage(string mailAddress, string message)
         {
-            ViewBag.ActiveSite = activeSite;
+            if (!string.IsNullOrEmpty(mailAddress) && !string.IsNullOrEmpty(message))
+            {
+                _result = _mailAPI.sendMailMessage(mailAddress, message);
+            }
         }
 
         /** Methode überprüft ob die Session gültig ist , über Cookies **/
@@ -85,13 +93,6 @@ namespace Homepage.Web.Controllers
             }
         }
 
-        /** REST-API Aufruf zum versenden der E-Mail **/
-        private void sendMailMessage(string mailAddress, string message)
-        {
-            if (!string.IsNullOrEmpty(mailAddress) && !string.IsNullOrEmpty(message))
-            {
-                _result =  _mailAPI.sendMailMessage(mailAddress, message);
-            }
-        }
+        void ErrorLogger(string message) => Log4net.Logger.Error("[CONTACTCONTROLLER] " + message);
     }
 }

@@ -15,6 +15,7 @@ namespace Homepage.Web.Controllers
         public ProjectsController()
         {
             _projectAPI = new ProjectAPI();
+            _projectAPI.OnError += new ProjectAPI.OnErrorEventHandler(ErrorLogger);
         }
 
         public ActionResult Projects()
@@ -46,10 +47,7 @@ namespace Homepage.Web.Controllers
             return View();
         }
 
-        internal void setSettings(string activeSite)
-        {
-            ViewBag.ActiveSite = activeSite;
-        }
+        internal void setSettings(string activeSite) => ViewBag.ActiveSite = activeSite;
 
         /** Methode überprüft ob die Session gültig ist , über Cookies **/
         internal bool proveCookies()
@@ -65,5 +63,7 @@ namespace Homepage.Web.Controllers
                 return false;
             }
         }
+
+        void ErrorLogger(string message) => Log4net.Logger.Error("[PROJECTCONTROLLER] " + message);
     }
 }
