@@ -50,15 +50,15 @@ namespace Homepage.Backend.DataAccess
                 sqlQuery = "GetSkills";
 
                 /** SQL Select Statement gibt die Tabelle "Skills" zurück **/
-                currentSkillsTable = _sqlManager.ExecuteSelect(sqlQuery, 
-                    new string[] { }, 
+                currentSkillsTable = _sqlManager.ExecuteSelect(sqlQuery,
+                    new string[] { },
                     new object[] { });
 
                 /** Tabelle wird in einer Schleife durchlaufen und ins Modell geladen
                  * und anschließend zur Liste "listSkills" hinzugefügt **/
                 if (currentSkillsTable.Rows.Count > 0)
                 {
-                    for(int i = 0; i< currentSkillsTable.Rows.Count; i++)
+                    for (int i = 0; i < currentSkillsTable.Rows.Count; i++)
                     {
                         ListSkills currentSkill = new ListSkills();
 
@@ -86,16 +86,16 @@ namespace Homepage.Backend.DataAccess
                         {
                             currentSkill.CreationDate = (DateTime)currentSkillsTable.Rows[i]["CreationDate"];
                         }
-                       
+
                         listSkills.Add(currentSkill);
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 OnError("[GETSKILLS-ERROR] " + ex.Message);
             }
-            
+
             return listSkills;
         }
 
@@ -114,8 +114,8 @@ namespace Homepage.Backend.DataAccess
                 sqlQuery = "GetProjects";
 
                 /** SQL Select Statement gibt die Tabelle "Projects" zurück **/
-                currentProjectsTable = _sqlManager.ExecuteSelect(sqlQuery, 
-                    new string[] { }, 
+                currentProjectsTable = _sqlManager.ExecuteSelect(sqlQuery,
+                    new string[] { },
                     new object[] { });
 
                 /** Tabelle wird in einer Schleife durchlaufen und ins Modell geladen
@@ -155,7 +155,7 @@ namespace Homepage.Backend.DataAccess
 
                         currentListProjectImages = getProjectsImages(currentProject.Id);
 
-                        if(currentListProjectImages.Count > 0)
+                        if (currentListProjectImages.Count > 0)
                         {
                             currentProject.ListProjectImages = currentListProjectImages;
                         }
@@ -186,8 +186,8 @@ namespace Homepage.Backend.DataAccess
                 sqlQuery = "GetProjectImages";
 
                 /** SQL Select Statement gibt die Tabelle "ProjectImages" zurück **/
-                currentProjectImagesTable = _sqlManager.ExecuteSelect(sqlQuery, 
-                    new string[] { "@ProjectID" }, 
+                currentProjectImagesTable = _sqlManager.ExecuteSelect(sqlQuery,
+                    new string[] { "@ProjectID" },
                     new object[] { projectId });
 
                 /** Tabelle wird in einer Schleife durchlaufen und ins Modell geladen
@@ -210,7 +210,7 @@ namespace Homepage.Backend.DataAccess
                         {
                             currentProjectImage.Image = currentProjectImagesTable.Rows[i]["Image"].ToString();
                         }
-                   
+
                         listProjectsImages.Add(currentProjectImage);
                     }
                 }
