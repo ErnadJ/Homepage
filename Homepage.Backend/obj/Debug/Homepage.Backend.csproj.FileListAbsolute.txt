@@ -9,3 +9,14 @@ C:\Users\ejakupovic\Desktop\Homepage\Homepage.Backend\bin\Debug\Homepage.GlobalD
 C:\Users\ejakupovic\Desktop\Homepage\Homepage.Backend\obj\Debug\Homepage.Backend.csproj.CopyComplete
 C:\Users\ejakupovic\Desktop\Homepage\Homepage.Backend\bin\Debug\EASendMail.dll
 C:\Users\ejakupovic\Desktop\Homepage\Homepage.Backend\obj\Debug\Homepage.Backend.csprojAssemblyReference.cache
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\bin\Debug\Homepage.Backend.dll.config
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\bin\Debug\Homepage.Backend.dll
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\bin\Debug\Homepage.Backend.pdb
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\bin\Debug\EASendMail.dll
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\bin\Debug\Homepage.GlobalDefinitions.dll
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\bin\Debug\Homepage.GlobalDefinitions.pdb
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\obj\Debug\Homepage.Backend.csproj.AssemblyReference.cache
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\obj\Debug\Homepage.Backend.csproj.CoreCompileInputs.cache
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\obj\Debug\Homepage.Backend.csproj.CopyComplete
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\obj\Debug\Homepage.Backend.dll
+C:\Users\ejakupovic\Desktop\Homepage-main\Homepage.Backend\obj\Debug\Homepage.Backend.pdb

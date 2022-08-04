@@ -14,6 +14,9 @@ namespace Homepage.Backend.DataAccess
          * Klasse gibt die Daten aus der Tabelle 'dbo.SMTPConfig' zurück.
          */
 
+        public event OnErrorEventHandler OnError;
+        public delegate void OnErrorEventHandler(string message);
+
         private SMTPConfig _currentSmtpConfig;
         private SQL _sqlManager;
 
@@ -21,18 +24,6 @@ namespace Homepage.Backend.DataAccess
         {
             _currentSmtpConfig = new SMTPConfig();
             _sqlManager = new SQL();
-        }
-
-        public SMTPConfig CurrentSMTPConfig
-        {
-            get
-            {
-                return _currentSmtpConfig;
-            }
-            set
-            {
-                _currentSmtpConfig = value;
-            }
         }
 
         /** Methode gibt die SMTP_Config Tabelle zurück **/
@@ -55,28 +46,54 @@ namespace Homepage.Backend.DataAccess
                 sqlQuery = "GetSMTPConfig";
 
                 /** SQL Select Statement gibt die Tabelle "SMTP_Config" zurück **/
-                smtpConfigTable = _sqlManager.ExecuteSelect(sqlQuery, new string[] { }, new object[] { });
+                smtpConfigTable = _sqlManager.ExecuteSelect(sqlQuery, 
+                    new string[] { }, 
+                    new object[] { });
 
                 /** Tabelle wird in einer Schleife durchlaufen und ins Modell geladen **/
                 if (smtpConfigTable.Rows.Count > 0)
                 {
                     for(int i = 0; i < smtpConfigTable.Rows.Count; i++)
                     {
-                        currentSMTPConfig.Id = Convert.ToInt64(smtpConfigTable.Rows[i]["ID"]);
-                        currentSMTPConfig.MailFrom = (smtpConfigTable.Rows[i]["MailFrom"].ToString());
-                        currentSMTPConfig.MailTo = (smtpConfigTable.Rows[i]["MailTo"].ToString());
-                        currentSMTPConfig.Password = (smtpConfigTable.Rows[i]["Password"].ToString());
-                        currentSMTPConfig.Subject = (smtpConfigTable.Rows[i]["Subject"].ToString());
-                        currentSMTPConfig.SMTPServer = (smtpConfigTable.Rows[i]["SMTPServer"].ToString());
-                        currentSMTPConfig.SMTPPort = Convert.ToInt32((smtpConfigTable.Rows[i]["SMTPPort"].ToString()));
-                        currentSMTPConfig.CreationDate = (DateTime)smtpConfigTable.Rows[i]["CreationDate"];
+                        if (!Convert.IsDBNull(smtpConfigTable.Rows[i]["ID"]))
+                        {
+                            currentSMTPConfig.Id = Convert.ToInt64(smtpConfigTable.Rows[i]["ID"]);
+                        }
+                        if (!Convert.IsDBNull(smtpConfigTable.Rows[i]["MailFrom"]))
+                        {
+                            currentSMTPConfig.MailFrom = (smtpConfigTable.Rows[i]["MailFrom"].ToString());
+                        }
+                        if (!Convert.IsDBNull(smtpConfigTable.Rows[i]["MailTo"]))
+                        {
+                            currentSMTPConfig.MailTo = (smtpConfigTable.Rows[i]["MailTo"].ToString());
+                        }
+                        if (!Convert.IsDBNull(smtpConfigTable.Rows[i]["Password"]))
+                        {
+                            currentSMTPConfig.Password = (smtpConfigTable.Rows[i]["Password"].ToString());
+                        }
+                        if (!Convert.IsDBNull(smtpConfigTable.Rows[i]["Subject"]))
+                        {
+                            currentSMTPConfig.Subject = (smtpConfigTable.Rows[i]["Subject"].ToString());
+                        }
+                        if (!Convert.IsDBNull(smtpConfigTable.Rows[i]["SMTPServer"]))
+                        {
+                            currentSMTPConfig.SMTPServer = (smtpConfigTable.Rows[i]["SMTPServer"].ToString());
+                        }
+                        if (!Convert.IsDBNull(smtpConfigTable.Rows[i]["SMTPPort"]))
+                        {
+                            currentSMTPConfig.SMTPPort = Convert.ToInt32(smtpConfigTable.Rows[i]["SMTPPort"]);
+                        }
+                        if (!Convert.IsDBNull(smtpConfigTable.Rows[i]["CreationDate"]))
+                        {
+                            currentSMTPConfig.CreationDate = (DateTime)smtpConfigTable.Rows[i]["CreationDate"];
+                        }
                     }
                 }
             }
             catch(Exception ex)
             {
-                throw ex;
-            }
+                OnError("[GETSMTPCONFIG-ERROR] " + ex.Message);
+            } 
 
             return currentSMTPConfig;
         }

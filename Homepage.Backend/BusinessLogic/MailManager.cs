@@ -14,6 +14,9 @@ namespace Homepage.Backend.BusinessLogic
          * Klasse versendet über einen Mail-Server, Emails.
          */
 
+        public event OnErrorEventHandler OnError;
+        public delegate void OnErrorEventHandler(string message);
+
         private SMTPConfig _currentSMTPConfig;
         private Contact _currentContact;
         
@@ -67,7 +70,7 @@ namespace Homepage.Backend.BusinessLogic
 
                 oMail.Subject = this.CurrentSMTPConfig.Subject;
 
-                oMail.TextBody = "E-Mail von : " + this.CurrentContact.MailAddress + " " + " Nachricht : " +  this.CurrentContact.Message;
+                oMail.TextBody = "E-Mail von : " + this.CurrentContact.MailAddress + " " + " Nachricht : " + this.CurrentContact.Message;
 
                 SmtpServer oServer = new SmtpServer(this.CurrentSMTPConfig.SMTPServer);
 
@@ -87,7 +90,7 @@ namespace Homepage.Backend.BusinessLogic
             }
             catch (Exception ex)
             {
-                throw ex;
+                OnError("[SENDMESSAGEMAIL-ERROR] " + ex.Message);
             }
 
             return result;

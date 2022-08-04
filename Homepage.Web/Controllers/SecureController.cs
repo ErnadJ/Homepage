@@ -41,7 +41,7 @@ namespace Homepage.Web.Controllers
                         {
                             /** Wenn der mitgegebene AuthCode der selbe AuthCode 
                              * wie aus der Datenbank ist, dann kann man die Webseite betreten **/
-                            if (authCode == configAuthCode)
+                            if (authCode.Equals(configAuthCode))
                             {
                                 setCookies(authCode);
 
@@ -107,7 +107,7 @@ namespace Homepage.Web.Controllers
                 cookie.Values["authCode"] = authCode;
 
                 cookie.Expires = DateTime.Now.AddHours(1);
-                Response.Cookies.Add(cookie);
+                cookie.Secure = true;
 
                 FormsAuthentication.SetAuthCookie(authCode, false);
             }
@@ -129,6 +129,7 @@ namespace Homepage.Web.Controllers
                     cookie.Values.Remove("authCode");
 
                     cookie.Expires = DateTime.Now.AddDays(-1);
+
                     Response.Cookies.Add(cookie);
                 }
 

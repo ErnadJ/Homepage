@@ -13,6 +13,9 @@ namespace Homepage.Backend.DataAccess
          * Klasse prüft ob der User in der Tabelle 'dbo.Users' exestiert.
          */
 
+        public event OnErrorEventHandler OnError;
+        public delegate void OnErrorEventHandler(string message);
+
         private SQL _sqlManager;
 
         public RESTUserDB()
@@ -38,7 +41,9 @@ namespace Homepage.Backend.DataAccess
                 sqlQuery = "GetRestUser";
 
                 /** SQL Select Statement gibt die Tabelle "Users" zurück **/
-                userTable = _sqlManager.ExecuteSelect(sqlQuery, new string[] { "@Username", "@Password"}, new object[] { username, password });
+                userTable = _sqlManager.ExecuteSelect(sqlQuery, 
+                    new string[] { "@Username", "@Password"}, 
+                    new object[] { username, password });
 
                 /** Wenn ein Eintrag gefunden wurde , dann exestiert der User **/
                 if (userTable.Rows.Count > 0)
@@ -48,7 +53,7 @@ namespace Homepage.Backend.DataAccess
             }
             catch (Exception ex)
             {
-                throw ex;
+                OnError("[GETRESTUSER-ERROR] " + ex.Message);
             }
 
             return false;

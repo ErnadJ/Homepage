@@ -13,6 +13,9 @@ namespace Homepage.Web.RESTCaller.APIAccess
 {
     public class SMTPConfigAPI
     {
+        public event OnErrorEventHandler OnError;
+        public delegate void OnErrorEventHandler(string message);
+
         private string _username = Properties.Settings.Default.REST_Username;
         private string _password = Properties.Settings.Default.REST_Password;
         private string _restUrl = Properties.Settings.Default.REST_Url;
@@ -51,7 +54,7 @@ namespace Homepage.Web.RESTCaller.APIAccess
             }
             catch (Exception ex)
             {
-                throw ex;
+                OnError("[GETSMTPCONFIG-ERROR] " + ex.Message);
             }
 
             return currentSMTPConfig;

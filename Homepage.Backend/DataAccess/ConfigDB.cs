@@ -13,6 +13,8 @@ namespace Homepage.Backend.DataAccess
         /*  
          * Klasse gibt die Daten aus der Tabelle 'dbo.Config' zurück.
          */
+        public event OnErrorEventHandler OnError;
+        public delegate void OnErrorEventHandler(string message);
 
         private Config _currentConfig;
         private SQL _sqlManager;
@@ -21,18 +23,6 @@ namespace Homepage.Backend.DataAccess
         {
             _currentConfig = new Config();
             _sqlManager = new SQL();
-        }
-
-        public Config CurrentConfig
-        {
-            get
-            {
-                return _currentConfig;
-            }
-            set
-            {
-                _currentConfig = value;
-            }
         }
 
         /** Methode gibt die Config Tabelle aus der Datenbank zurück **/
@@ -61,19 +51,40 @@ namespace Homepage.Backend.DataAccess
                 {
                     for(int i = 0; i < configTable.Rows.Count; i++)
                     {
-                        currentConfig.Id = Convert.ToInt64(configTable.Rows[i]["ID"]);
-                        currentConfig.WebsiteName = (configTable.Rows[i]["WebsiteName"].ToString());
-                        currentConfig.Author = (configTable.Rows[i]["Author"].ToString());
-                        currentConfig.ContactMailAddress = (configTable.Rows[i]["ContactMailAddress"].ToString());
-                        currentConfig.AuthCode = (configTable.Rows[i]["AuthCode"].ToString());
-                        currentConfig.MaintenanceMode = (bool)(configTable.Rows[i]["MaintenanceMode"]);
-                        currentConfig.CreationDate = (DateTime)configTable.Rows[i]["CreationDate"];
+                        if (!Convert.IsDBNull(configTable.Rows[i]["ID"]))
+                        {
+                            currentConfig.Id = Convert.ToInt64(configTable.Rows[i]["ID"]);
+                        }
+                        if (!Convert.IsDBNull(configTable.Rows[i]["WebsiteName"]))
+                        {
+                            currentConfig.WebsiteName = (configTable.Rows[i]["WebsiteName"].ToString());
+                        }
+                        if (!Convert.IsDBNull(configTable.Rows[i]["Author"]))
+                        {
+                            currentConfig.Author = (configTable.Rows[i]["Author"].ToString());
+                        }
+                        if (!Convert.IsDBNull(configTable.Rows[i]["ContactMailAddress"]))
+                        {
+                            currentConfig.ContactMailAddress = (configTable.Rows[i]["ContactMailAddress"].ToString());
+                        }
+                        if (!Convert.IsDBNull(configTable.Rows[i]["AuthCode"]))
+                        {
+                            currentConfig.AuthCode = (configTable.Rows[i]["AuthCode"].ToString());
+                        }
+                        if (!Convert.IsDBNull(configTable.Rows[i]["MaintenanceMode"]))
+                        {
+                            currentConfig.MaintenanceMode = (bool)(configTable.Rows[i]["MaintenanceMode"]);
+                        }
+                        if (!Convert.IsDBNull(configTable.Rows[i]["CreationDate"]))
+                        {
+                            currentConfig.CreationDate = (DateTime)configTable.Rows[i]["CreationDate"];
+                        }
                     }
                 }
             }
             catch(Exception ex)
             {
-                throw ex;
+                OnError("[GETCONFIG-ERROR] " + ex.Message);
             }
 
             return currentConfig;

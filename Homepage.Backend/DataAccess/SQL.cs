@@ -17,6 +17,9 @@ namespace Homepage.Backend.DataAccess
          * ExecuteUpdate - Aktualisiert einen Eintrag aus der Datenbank 
          */
 
+        public event OnErrorEventHandler OnError;
+        public delegate void OnErrorEventHandler(string message);
+
         private string dbConnection = Properties.Settings.Default.DBConnection;
 
         public bool ExecuteInsert(string commandText, string[] parameter, object[] values)
@@ -74,7 +77,7 @@ namespace Homepage.Backend.DataAccess
             }
             catch(Exception ex)
             {
-                throw ex;
+                OnError("[EXECUTESELECT-ERROR] " + ex.Message);
             }
             finally
             {
@@ -128,7 +131,7 @@ namespace Homepage.Backend.DataAccess
             }
             catch (Exception ex)
             {
-                throw ex;
+                OnError("[EXECUTEUPDATE-ERROR] " + ex.Message);
             }
             finally
             {
@@ -180,7 +183,7 @@ namespace Homepage.Backend.DataAccess
             }
             catch(Exception ex)
             {
-                throw ex;
+                OnError("[EXECUTEINSERT-ERROR] " + ex.Message);
             }
             finally
             {
